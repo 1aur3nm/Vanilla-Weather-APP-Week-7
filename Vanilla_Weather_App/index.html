@@ -10,7 +10,10 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="stylesheet.css" />
+
     <title>Week 7 Template</title>
   </head>
   <body>
@@ -18,10 +21,10 @@
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <div class="overview">
-            <h1>📍 Melbourne</h1>
+            <h1 id="city">📍</h1>
             <ul>
               <li>Wednesday 10:00</li>
-              <li>Clear</li>
+              <li id="conditions">Clear</li>
             </ul>
           </div>
           <div class="row">
@@ -33,7 +36,7 @@
                   class="float-left"
                 />
                 <div class="float-left">
-                  <strong>12</strong
+                  <strong id="number-temp"></strong
                   ><span class="units">℃ | <a href="#">℉</a></span>
                 </div>
               </div>
