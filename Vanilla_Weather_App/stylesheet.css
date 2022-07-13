@@ -61,3 +61,12 @@ li::first-letter {
   font-size: 18px;
   top: -32px;
 }
+
+.weather-info .active {
+  color: black;
+  cursor: default;
+}
+
+.weather-info.active:hover {
+  text-decoration: none;
+}
