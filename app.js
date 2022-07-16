@@ -22,9 +22,39 @@ function formatDateAndTime(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${mins}`;
 }
+//
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
 
+  let days = ["TUS", "WED", "THUR", "FRI"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">   
+        <div class="weather-forcast-day">${day}</div> 
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/64/rain_heavy.png"
+            alt="google rain emoji"
+            width="30"
+          />
+          <div class="weather-forcast-temp">
+            <span class="weather-forcast-temp-max"> 
+              18º 
+            </span>
+            <span class="weather-forcast-temp-min">
+              12º
+            </span>
+        </div>
+      </div>
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+//
 function displayTemperature(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#number-temp");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
 
@@ -79,9 +109,9 @@ function displayCelsiusTemp(event) {
 
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
-////////////////////////////////////
+//
 let celsiusTemp = null;
-
+//
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -92,3 +122,5 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("London");
+
+displayForecast();
