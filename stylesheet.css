@@ -70,3 +70,22 @@ li::first-letter {
 .weather-info.active:hover {
   text-decoration: none;
 }
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: black;
+}
+
+.weather-forcast-day {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-forcast-temp {
+  font-size: 13px;
+}
+
+.weather-forcast-temp-min {
+  opacity: 0.5;
+}
