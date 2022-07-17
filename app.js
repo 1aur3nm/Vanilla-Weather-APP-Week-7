@@ -72,7 +72,7 @@ function displayTemperature(response) {
   cityElement.innerHTML = response.data.name;
 
   let conditionsElement = document.querySelector("#conditions");
-  conditionsElement.innerHTML = response.data.weather[0].decription;
+  conditionsElement.innerHTML = response.data.weather[0].description;
 
   let dateElement = document.querySelector("#dateAndTime");
   dateElement.innerHTML = formatDateAndTime(response.data.dt * 1000);
