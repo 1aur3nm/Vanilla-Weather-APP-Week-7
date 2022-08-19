@@ -87,6 +87,9 @@ function displayTemperature(response) {
   let conditionsElement = document.querySelector("#conditions");
   conditionsElement.innerHTML = response.data.weather[0].description;
 
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+
   let dateElement = document.querySelector("#dateAndTime");
   dateElement.innerHTML = formatDateAndTime(response.data.dt * 1000);
 
